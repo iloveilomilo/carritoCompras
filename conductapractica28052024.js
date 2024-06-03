@@ -5,6 +5,8 @@ var listaCarro = document.getElementById("carrito");
 var carrosinrepetidos = [];
 productos();
 
+alert ("sin error");
+
 function productos(){
     var objProducto = {
         id : 1,
@@ -51,7 +53,7 @@ function calcularTotal(){
     var elTotal = 0;
     for(var p of carrosinrepetidos)
     {
-        elTotal+= p.precio;
+        elTotal+= p.precio*p.cantidad;
     }
     spTotal.textContent = elTotal;
 }
@@ -59,14 +61,13 @@ function mostrarEnCarro(){
 listaCarro.textContent="";
     for (var ObjP of carrosinrepetidos)
         {
-            if(objP.cantidad <0)
+            if(ObjP.cantidad > 0)
                 {
                     var nodoProductoenCarro = document.createElement("li");
-        nodoProductoenCarro.classList.add("list-group-item" , "text-right" , "mx-2" );
-        nodoProductoenCarro.textContent = ObjP.cantidad + " - " + ObjP.nombre + " - $ " + ObjP.precio;
-        listaCarro.appendChild(nodoProductoenCarro);
+                    nodoProductoenCarro.classList.add("list-group-item" , "text-right" , "mx-2" );
+                    nodoProductoenCarro.textContent = ObjP.cantidad + " - " + ObjP.nombre + " - $ " + ObjP.precio;
+                    listaCarro.appendChild(nodoProductoenCarro);
                 }
-        
     }
 }
 

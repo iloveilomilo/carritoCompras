@@ -1,0 +1,2 @@
+productos = '[{"id":1,"nombre":"Producto 1","precio":375,"cantidad": 0,"imagen":"images/brown-bear-7597616_640.jpg"},{"id":2,"nombre":"Producto 2","precio":475,"cantidad":0,"imagen":"images/brown-bear-8164838_640.jpg"},{"id":3,"nombre":"Producto 3","precio":575, "cantidad":0,"imagen":"images/brown-bear-8756478_640.jpg"},{"id":4,"nombre":"Producto 4","precio":1000, "cantidad":0,"imagen":"images/brown-bear-8756478_640.jpg"}]'
+
