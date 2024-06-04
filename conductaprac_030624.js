@@ -3,7 +3,6 @@ var spTotal = document.getElementById("total");
 var listaCarro = document.getElementById("carrito");
 
 var carrosinrepetidos = JSON.parse(productos);
-alert ("sin error");
 
 var productosXML = document.getElementById("productos");
 mostrarProductos();
@@ -75,7 +74,24 @@ listaCarro.textContent="";
                     nodoProductoenCarro.classList.add("list-group-item" , "text-right" , "mx-2" );
                     nodoProductoenCarro.textContent = ObjP.cantidad + " - " + ObjP.nombre + " - $ " + ObjP.precio;
                     listaCarro.appendChild(nodoProductoenCarro);
+
+
+                    //agregar boton para borrar
+                    var elBoton = document.createElement('button');
+                    elBoton.classList.add('btn','btn-danger','mx-5');
+                    elBoton.textContent='X';
+                    elBoton.setAttribute('item', ObjP.id);
+                    elBoton.addEventListener('click', borrarProductodelCarro);
+                    nodoProductoenCarro.appendChild(elBoton);
+
+                    listaCarro.appendChild(nodoProductoenCarro);
                 }
     }
 }
 
+function borrarProductodelCarro()
+{
+    carrosinrepetidos[(this.getAttribute("item")-1)].cantidad--;
+    calcularTotal();
+    mostrarEnCarro();
+}
